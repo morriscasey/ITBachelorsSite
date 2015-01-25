@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>BAS Application</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+
+<body>
+	<style>
+		.container h2, .container p{
+			text-align: center;
+		}
+		button {
+			margin: 0 auto;
+		}
+		.container {
+			max-width: 850px; 
+			background-color: #ddd;
+			border-radius: 0 0 5px 5px;
+		}
+	</style>
+
+	<div class="container">
+		<h2>Prerequisites</h2>
+		<!-- If we do this in an MVC view we would be able to do both of the forms on one page and use the selection passed to insert the proper lines + checkboxes -->
+		<p id="program">Software Development Program Prerequisites</p><br>
+		<p>Please check all that you have completed.</p>
+		<small id="note">Note: If you do not meet all of the prerequisites, or have extensive industry experience, an advisor will contact you to discuss options.</small>
+		<form action="" class="form-group" >
+			<div class="checkbox">
+				<label>
+					<input type="checkbox">Programming 1 and Programming 2 (CSCI 141&145 or CSCI 131&132)
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox">IT 201: Database Fundementals, or equivalent. 
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox">IT 190: Intro to Linux or LPI1 or Linux Essentials
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox">IT 121: HTML/CSS or equivalent
+				</label>
+			</div>
+			<p>Comments:</p>
+			<textarea name="prereq-comments" id="prereq-comments" rows="4" class="form-control"></textarea> <br>
+			<button class="btn btn-primary btn-lg" type="submit">Continue</button>
+		</form>
+	</div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
