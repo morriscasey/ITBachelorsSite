@@ -16,10 +16,12 @@ if (isset($_POST)){
 	$_SESSION['fname'] = $_POST['fname'];
 	$_SESSION['email'] = $_POST['email'];
 }
-echo 'first Name is ' . $_SESSION['first'] . '<br>' ;
+/*echo 'first Name is ' . $_SESSION['first'] . '<br>' ;
 echo 'sid used is: ' . $_SESSION['sid'];
 echo 'email address provided: ' .  $_SESSION['email'];
 echo '<br>Degree selected: ' . $_SESSION['degree'];
 // You may want to use SID here, like we did in page1.php
-echo '<br /><a href="page1.php' . SID . '">page 1</a>';
+echo '<br /><a href="page1.php' . SID . '">page 1</a>';*/
 ?>
+<br><br>
+<a href="PrerequisitsSoftDev.php">check prereqs</a>
