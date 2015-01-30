@@ -4,11 +4,24 @@
     //*** Start the buffer
     ob_start();
     
-    echo '<pre>';
-    var_dump($_SESSION);
-    echo '</pre>';
-    
 ?>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Prerequisites</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"></script>    
+</head>
+    
+<body>
+<div class="container">  
 <h2>Prerequisites</h2>
 	<p id="program">
 		<?php if ($_SESSION['degree'] == 'SD'){
@@ -77,6 +90,7 @@
 			<button class="btn btn-primary btn-lg" type="submit">Continue</button>
 			
 			</form>
+</div>
 <?php
  //Flush buffer
  ob_flush();
