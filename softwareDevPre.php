@@ -1,5 +1,13 @@
 <?php
-session_start();
+    //*** Start a session
+    session_start();
+    //*** Start the buffer
+    ob_start();
+    
+    echo '<pre>';
+    var_dump($_SESSION);
+    echo '</pre>';
+    
 ?>
 <h2>Prerequisites</h2>
 	<p id="program">
@@ -14,7 +22,7 @@ session_start();
 		<small id="note">Note: If you do not meet all of the prerequisites, or have extensive industry experience, an advisor will contact you to discuss options.</small>
 		<?php 
 			if ($_SESSION['degree'] == 'SD'){
-				echo '<form action="" class="form-group" >
+				echo '<form action="Education.php" class="form-group" >
 					<div class="checkbox">
 						<label>
 							<input type="checkbox">Programming 1 and Programming 2 (CSCI 141&145 or CSCI 131&132)
@@ -37,7 +45,7 @@ session_start();
 					</div>'; 
 			}
 			else {
-				echo '<form action="" class="form-group" >
+				echo '<form action="Education.php" class="form-group" >
 					<div class="checkbox">
 						<label>
 							<input type="checkbox" name="IT210">IT 210 or CCENT
@@ -69,3 +77,7 @@ session_start();
 			<button class="btn btn-primary btn-lg" type="submit">Continue</button>
 			
 			</form>
+<?php
+ //Flush buffer
+ ob_flush();
+?>

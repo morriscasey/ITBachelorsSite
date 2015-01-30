@@ -1,5 +1,14 @@
-<?php session_start(); ?>
-
+<?php
+    //*** Start a session
+    session_start();
+    //*** Start the buffer
+    ob_start();
+    
+    echo '<pre>';
+    var_dump($_SESSION);
+    echo '</pre>';
+    
+?>
 <!DOCTYPE html>
 
 <html>
@@ -51,5 +60,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
-
 </html>
+<?php
+ //Flush buffer
+ ob_flush();
+?>
