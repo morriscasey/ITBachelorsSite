@@ -4,10 +4,6 @@
     //*** Start the buffer
     ob_start();
     
-    echo '<pre>';
-    var_dump($_SESSION);
-    echo '</pre>';
-    
 ?>
 
 <!DOCTYPE html>
@@ -25,17 +21,18 @@
         }
         
         .container {
-			max-width: 850px; 
-			background-color: #ddd;
-			border-radius: 0 0 5px 5px;
+	    max-width: 850px; 
+	    background-color: #ddd;
+	    border-radius: 0 0 5px 5px;
 	}
         #agreeComplete{
             position: inherit;
-            margin-left: 2%;
+            margin-left: 1%;
             }
         #collegeCredits{
             width: 5em;
         }
+	
     </style>
     
 </head>
@@ -43,7 +40,7 @@
 <body>
     <div class="container">
         <h1 class="text-center">Education</h1>
-        <form name="eduForm" id="eduForm" class="form-group">
+        <form id="eduForm" name="eduForm" role="form" action="newStudentEmail.html" class="form-group">
             <label class="input-lg">Select highest degree achieved:</label>
             <div class="radio">
                 <label>
@@ -87,10 +84,14 @@
             <br>
              <div class="row">
                 <div class="checkbox">
-                    <label for="agreeComplete" class="control-label input-lg">I verify that the information submitted here is accurate and complete.</label>
-                    <div class="col-sm-1">
-                        <input id="agree" name="agree" type="checkbox" class="input-md form-control" required>
+		    <div class="col-sm-1">
+                        <input id="agreeComplete" name="agreeComplete" type="checkbox" class="input-md form-control" required>
                     </div>
+		    <div class="col-sm-10">
+			<label for="agreeComplete" class="control-label input-lg">I verify that the information submitted here is accurate and complete.</label>
+		    </div>
+                    
+                    
                 </div>
            </div>
             <button class="btn btn-primary btn-lg"  id="submit" type="submit">Finish</button>
@@ -114,9 +115,8 @@
 	
 	
 	var submitForm = document.getElementById('submit');
-	submitForm.onclick= function(){
-	    validateForm();
-	    };
+	submitForm.onsubmit= validateForm;
+
 	
 	
 	    function validateForm()
@@ -141,9 +141,13 @@
 		
 		if (isValid) {
 		    alert("valid");
-		    emailStudent();
+		    return true;
+		    
+		    
 		}else{
 		    alert("Please fill information needed");
+		    return false;
+		    
 		}
 		
 	    }
@@ -157,31 +161,15 @@
 		return false;
 	    }
 	    
-	    function emailStudent(){
-		// Reads whether student is new or current and sends approriate email.
-		// For now will load a webpage
-		
-		var isStudentNew = "<?php echo($_SESSION['student']); ?>";
-		
-		alert(isStudentNew);
-		if(isStudentNew == "new")
-		{
-		    alert("new");
-		    location.href = "http://caseym.greenrivertech.net/328/bas-app/currentStudentEmail.html";
-		}
-		else if (isStudentNew == "current") {
-		    alert("current");
-		    location.href("currentStudentEmail.html");
-		}
-                
-            }
-
+	   
 	    
     </script>
 </body>
 </html>
 <?php
  //Flush buffer
+ //header_remove();
  ob_flush();
- unset($_SESSION['student']);
+ //session_destroy()
+ //unset($_SESSION['student']);
 ?>
